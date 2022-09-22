@@ -17,6 +17,12 @@ body{
     align-items: center;
     justify-content: space-between;
 }
+.player-score{
+    margin: 10px;
+}
+.computer-score{
+    margin: 10px;
+}
 .computer-choice{
     display: flex;
     border: solid;
@@ -30,25 +36,15 @@ body{
     justify-content: space-between;
     background-color: powderblue;
 }
-.rock{
+.choice{
     width: 200px;
     height: 200px;
     border: solid;
     margin: 20px;
+    /* object-fit: cover; */
 }
-
-.paper{
+.choice img{
     width: 200px;
     height: 200px;
-    border: solid;
-    margin: 20px;
-
-}
-
-.scissors{
-    width: 200px;
-    height: 200px;
-    border: solid;
-    margin: 20px;
-
+    object-fit:cover;
 }

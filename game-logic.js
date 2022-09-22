@@ -1,4 +1,6 @@
 const choice = ["rock","paper","scissors"]
+let playerCounter = 0;
+let cpuCounter =0;
 
 function getComputerChoice(){
     let computerPlay = Math.floor(Math.random()*3)
@@ -6,47 +8,52 @@ function getComputerChoice(){
 }
 
 
-function playRound(playerSelection,computerSelection){
-    // console.log(computerSelection)
-    if(!choice.includes(playerSelection.toLowerCase())){
-        return -2
-    }else if(playerSelection.toLowerCase() === computerSelection){
-        return -1
-    }else if(playerSelection.toLowerCase() === "rock" && computerSelection === "paper"){
-        return 0
-    }else if(playerSelection.toLowerCase() === "paper" && computerSelection === "scissors"){
-        return 0
-    }else if(playerSelection.toLowerCase() === "scissors" && computerSelection === "rock"){
-        return 0
+function playRound(e){
+    let computerSelection = getComputerChoice();
+
+    if(e.target.id=== computerSelection){
+        console.log('tie')
+    }else if(e.target.id === "rock" && computerSelection === "paper"){
+        cpuCounter++;
+        document.querySelector('div.computer-score > h2').textContent = `Cpu Score: ${cpuCounter}`;
+    }else if(e.target.id === "paper" && computerSelection === "scissors"){
+        cpuCounter++;
+        document.querySelector('div.computer-score > h2').textContent = `Cpu Score: ${cpuCounter}`;
+    }else if(e.target.id === "scissors" && computerSelection === "rock"){
+        cpuCounter++;
+        document.querySelector('div.computer-score > h2').textContent = `Cpu Score: ${cpuCounter}`;
     }else{
-        return 1
+        playerCounter++;
+        document.querySelector('div.player-score > h2').textContent = `Player Score: ${playerCounter}`;
     }
 }
+const playerChoices = document.querySelectorAll('.choice')
 
-function game(){
-    let playerCount = 0
-    let cpuCount = 0
-    while(playerCount != 5 && cpuCount != 5){
+playerChoices.forEach(choice => choice.addEventListener('click',playRound))
+// function game(){
+//     let playerCount = 0
+//     let cpuCount = 0
+//     while(playerCount != 5 && cpuCount != 5){
 
-        let playerInput = prompt("Rock,Paper, or Scissors?")
-        let cpuChoice = getComputerChoice()
+//         let playerInput = prompt("Rock,Paper, or Scissors?")
+//         let cpuChoice = getComputerChoice()
 
-        let round = playRound(playerInput,cpuChoice)
-        if( round === -1){
-            // playerCount += 1;
-            // cpuCount += 1;
-            alert(`You tied! ${playerInput} and ${cpuChoice} can't beat each other`)
-        }else if (round === 0){
-            cpuCount += 1
-            alert(`You lost! ${cpuChoice} beats ${playerInput}`)
-        }else if(round === 1){
-            playerCount += 1
-            alert(`You Won! ${playerInput} beats ${cpuChoice}`)
-        }else if(round === -2){
-           alert("invalid, round not counted") 
-        }
+//         let round = playRound(playerInput,cpuChoice)
+//         if( round === -1){
+//             // playerCount += 1;
+//             // cpuCount += 1;
+//             alert(`You tied! ${playerInput} and ${cpuChoice} can't beat each other`)
+//         }else if (round === 0){
+//             cpuCount += 1
+//             alert(`You lost! ${cpuChoice} beats ${playerInput}`)
+//         }else if(round === 1){
+//             playerCount += 1
+//             alert(`You Won! ${playerInput} beats ${cpuChoice}`)
+//         }else if(round === -2){
+//            alert("invalid, round not counted") 
+//         }
 
-        console.log(round, playerCount,cpuCount)
-    }
-    playerCount > cpuCount? alert(`Player wins with ${playerCount} vs CPUs ${cpuCount}`): playerCount === cpuCount? alert(`Player and CPU ties with ${playerCount} wins`):alert(`CPU wins with ${cpuCount} vs Players ${playerCount} wins`)
-}
+//         console.log(round, playerCount,cpuCount)
+//     }
+//     playerCount > cpuCount? alert(`Player wins with ${playerCount} vs CPUs ${cpuCount}`): playerCount === cpuCount? alert(`Player and CPU ties with ${playerCount} wins`):alert(`CPU wins with ${cpuCount} vs Players ${playerCount} wins`)
+// }
