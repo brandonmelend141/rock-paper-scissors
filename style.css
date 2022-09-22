@@ -1,0 +1,54 @@
+body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.game-wrapper{
+    background-color: powderblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    flex-direction: column;
+}
+
+.counter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.computer-choice{
+    display: flex;
+    border: solid;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.player-choices{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: powderblue;
+}
+.rock{
+    width: 200px;
+    height: 200px;
+    border: solid;
+    margin: 20px;
+}
+
+.paper{
+    width: 200px;
+    height: 200px;
+    border: solid;
+    margin: 20px;
+
+}
+
+.scissors{
+    width: 200px;
+    height: 200px;
+    border: solid;
+    margin: 20px;
+
+}
