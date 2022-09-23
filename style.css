@@ -27,14 +27,14 @@ body{
 }
 .computer-choice{
     display: flex;
-    border: solid;
+    /* border: solid; */
     width: 100%;
     align-items: center;
     justify-content: center;
 }
 .computer-choice img{
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
 }
 .player-choices{
@@ -44,14 +44,32 @@ body{
     background-color: powderblue;
 }
 .choice{
-    width: 200px;
-    height: 200px;
-    border: solid;
+    width: 300px;
+    height: 300px;
+    /* border: solid; */
     margin: 20px;
     /* object-fit: cover; */
 }
 .choice img{
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     object-fit:cover;
+}
+.game-over-message{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 200px;
+    border: solid;
+    border-radius: 15px;
+    background-color: white;
+
 }
