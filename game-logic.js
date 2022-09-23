@@ -1,12 +1,17 @@
 const choice = ["rock","paper","scissors"]
+const rpsPhotos = ['./images/rock.png','./images/paper.png', './images/scissors.png']
 let playerCounter = 0;
 let cpuCounter =0;
 
 function getComputerChoice(){
     let computerPlay = Math.floor(Math.random()*3)
+    getComputerChoicePhoto(computerPlay)
     return choice[computerPlay]
 }
-
+function getComputerChoicePhoto(cpuChoice){
+    let cpuPlay = document.querySelector('.computer-choice')
+    document.querySelector("div.computer-choice > img").src = rpsPhotos[cpuChoice]
+}
 
 function playRound(e){
     let computerSelection = getComputerChoice();

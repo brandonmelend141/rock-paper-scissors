@@ -9,6 +9,8 @@ body{
     align-items: center;
     justify-content: center;
     width: auto;
+    height: 100vh;
+    overflow-x: hidden;
     flex-direction: column;
 }
 
@@ -29,6 +31,11 @@ body{
     width: 100%;
     align-items: center;
     justify-content: center;
+}
+.computer-choice img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
 }
 .player-choices{
     display: flex;
